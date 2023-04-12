@@ -21,6 +21,11 @@ else
   config.color_scheme = 'Gruvbox dark, medium (base16)'
 end
 
+config.use_fancy_tab_bar = true
+
+config.window_frame = {
+  font_size = 10.0,
+}
 -- and finally, return the configuration to wezterm
 return config
 
