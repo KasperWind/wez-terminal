@@ -15,7 +15,7 @@ end
 -- For example, changing the color scheme:
 local temp = os.date("*t", os.time())
 local h = tonumber(temp.hour)
-if h >= 8 and h < 17 then
+if h >= 8 and h < 20 then
   config.color_scheme = 'Gruvbox light, medium (base16)'
 else
   config.color_scheme = 'Gruvbox dark, medium (base16)'
@@ -26,6 +26,9 @@ config.use_fancy_tab_bar = true
 config.window_frame = {
   font_size = 10.0,
 }
+
+config.initial_cols = 200
+config.initial_rows = 55
 -- and finally, return the configuration to wezterm
 return config
 
