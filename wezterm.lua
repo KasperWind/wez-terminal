@@ -24,11 +24,13 @@ end
 config.use_fancy_tab_bar = true
 
 config.window_frame = {
-  font_size = 10.0,
+  font_size = 8.0,
 }
 
-config.initial_cols = 200
-config.initial_rows = 55
+config.font_size = 13.5
+
+config.initial_cols = 150
+config.initial_rows = 44
 -- and finally, return the configuration to wezterm
 return config
 
