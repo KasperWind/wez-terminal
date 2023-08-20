@@ -16,12 +16,13 @@ end
 local temp = os.date("*t", os.time())
 local h = tonumber(temp.hour)
 if h >= 8 and h < 20 then
-  config.color_scheme = 'Gruvbox light, medium (base16)'
+  config.color_scheme = 'Catppuccin Latte'
 else
-  config.color_scheme = 'Gruvbox dark, medium (base16)'
+  config.color_scheme = 'Catppuccin Macchiato'
 end
 
-config.use_fancy_tab_bar = true
+config.use_fancy_tab_bar = false
+config.enable_tab_bar = false
 
 config.window_frame = {
   font_size = 8.0,
