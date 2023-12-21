@@ -29,6 +29,10 @@ config.window_frame = {
   font_size = 8.0,
 }
 
+-- config.font = wezterm.font_with_fallback {
+--   'Droid Sans',
+-- }
+
 config.font_size = 13.5
 
 config.initial_cols = 150
