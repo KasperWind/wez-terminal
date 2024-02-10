@@ -12,15 +12,10 @@ end
 
 -- This is where you actually apply your config choices
 
--- For example, changing the color scheme:
-local temp = os.date("*t", os.time())
-local h = tonumber(temp.hour)
-if h >= 8 and h < 20 then
-  --config.color_scheme = 'Catppuccin Latte'
-  config.color_scheme = 'Catppuccin Macchiato'
-else
-  config.color_scheme = 'Catppuccin Macchiato'
-end
+local kanagawa = require 'kanagawa'
+
+config.colors = kanagawa.colors
+config.force_reverse_video_cursor = kanagawa.force_reverse_video_cursor
 
 config.use_fancy_tab_bar = false
 config.enable_tab_bar = false
