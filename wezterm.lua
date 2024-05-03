@@ -5,6 +5,7 @@ local config = {}
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
+
 local function get_os()
     if string.find(wezterm.target_triple, 'linux') ~= nil then
         return 'linux'
@@ -36,7 +37,9 @@ config.window_frame = {
   font_size = 7.0,
 }
 
-config.font_size = 16.0
+if get_os() == 'windows' then
+    config.font_size = 13.5
+end
 
 config.initial_cols = 150
 config.initial_rows = 44
