@@ -1,37 +1,55 @@
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
--- This table will hold the configuration.
 local config = {}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- This is where you actually apply your config choices
+config.enable_wayland = false
+
+-- colors
 
 local kanagawa = require 'kanagawa'
-
 config.colors = kanagawa.colors
 config.force_reverse_video_cursor = kanagawa.force_reverse_video_cursor
 
+-- tab bar
 config.use_fancy_tab_bar = false
-config.enable_tab_bar = false
+config.enable_tab_bar = true
+config.tab_bar_at_bottom = true
+config.hide_tab_bar_if_only_one_tab = true
 
 config.window_frame = {
-  font_size = 8.0,
+  font_size = 7.0,
 }
 
--- config.font = wezterm.font_with_fallback {
---   'Droid Sans',
--- }
-
-config.font_size = 13.5
+config.font_size = 16.0
 
 config.initial_cols = 150
 config.initial_rows = 44
--- and finally, return the configuration to wezterm
-return config
 
+-- keymaps
+--
+
+config.keys = {
+    {
+        key = 'h',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivateTabRelative(-1)
+    },
+    {
+        key = 'l',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivateTabRelative(1)
+    },
+
+    {
+        key = '[',
+        mods = 'CTRL',
+        action = wezterm.action.ActivateCopyMode
+    },
+}
+
+
+return config
