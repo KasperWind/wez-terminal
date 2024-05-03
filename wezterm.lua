@@ -5,9 +5,21 @@ local config = {}
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
+local function get_os()
+    if string.find(wezterm.target_triple, 'linux') ~= nil then
+        return 'linux'
+    elseif string.find(wezterm.target_triple, 'apple')   ~= nil then
+        return 'mac_os'
+    elseif string.find(wezterm.target_triple, 'windows') ~= nil then
+        return 'windows'
+    else
+        return ''
+    end
+end
 
-config.enable_wayland = false
-
+if get_os() == 'linux' then
+  config.enable_wayland = false
+end
 -- colors
 
 local kanagawa = require 'kanagawa'
@@ -51,5 +63,8 @@ config.keys = {
     },
 }
 
+if get_os() == 'windows' then
+    config.default_prog = {'C:\\Windows\\system32\\wsl.exe', '~'}
+end
 
 return config
