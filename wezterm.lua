@@ -19,7 +19,7 @@ local function get_os()
 end
 
 if get_os() == 'linux' then
-  config.enable_wayland = false
+  config.enable_wayland = true
 end
 -- colors
 
@@ -34,9 +34,10 @@ config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
 
 config.window_frame = {
-  font_size = 7.0,
+  font_size = 9.0,
 }
 
+config.font_size = 15
 if get_os() == 'windows' then
     config.font_size = 13.5
 end
