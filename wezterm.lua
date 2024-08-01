@@ -23,9 +23,10 @@ if get_os() == 'linux' then
 end
 -- colors
 
-local kanagawa = require 'kanagawa'
-config.colors = kanagawa.colors
-config.force_reverse_video_cursor = kanagawa.force_reverse_video_cursor
+-- local kanagawa = require 'kanagawa'
+-- config.colors = kanagawa.colors
+-- config.force_reverse_video_cursor = kanagawa.force_reverse_video_cursor
+config.color_scheme = 'Gruvbox dark, soft (base16)'
 
 -- tab bar
 config.use_fancy_tab_bar = false
