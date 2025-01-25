@@ -62,6 +62,16 @@ config.keys = {
     },
 
     {
+        key = 'k',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivatePaneDirection('Up')
+    },
+    {
+        key = 'j',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivatePaneDirection('Down')
+    },
+    {
         key = '[',
         mods = 'CTRL',
         action = wezterm.action.ActivateCopyMode
