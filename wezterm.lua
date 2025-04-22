@@ -38,6 +38,11 @@ config.window_frame = {
   font_size = 9.0,
 }
 
+-- config.font = wezterm.font ('Lilex Nerd Font Mono', { weight = 'Regular', italic = false })
+-- config.font = wezterm.font ('GeistMono NFM', { weight = 'Regular', italic = false })
+-- config.font = wezterm.font ('IosevkaTerm NFM', { weight = 'Medium', italic = false })
+-- config.font = wezterm.font ('CaskaydiaCove NFM', { weight = 'Medium', italic = false })
+
 config.font_size = 15
 if get_os() == 'windows' then
     config.font_size = 13.5
