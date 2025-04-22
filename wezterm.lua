@@ -85,6 +85,7 @@ config.keys = {
 
 if get_os() == 'windows' then
     config.default_prog = {'C:\\Windows\\system32\\wsl.exe', '~'}
+    --config.default_prog = { 'pwsh.exe' }
 end
 
 return config
