@@ -6,6 +6,12 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+-- config.font = wezterm.font 'FiraCode Nerd Font'
+-- config.font = wezterm.font 'CaskaydiaCove Nerd Font'
+-- config.font = wezterm.font 'Terminess Nerd Font'
+-- config.font = wezterm.font 'ZedMono Nerd Font'
+config.font = wezterm.font('IosevkaTerm Nerd Font', { weight = 'Medium', italic = false })
+
 local function get_os()
     if string.find(wezterm.target_triple, 'linux') ~= nil then
         return 'linux'
