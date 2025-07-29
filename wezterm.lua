@@ -44,6 +44,11 @@ config.window_frame = {
   font_size = 9.0,
 }
 
+-- config.font = wezterm.font ('Lilex Nerd Font Mono', { weight = 'Regular', italic = false })
+-- config.font = wezterm.font ('GeistMono NFM', { weight = 'Regular', italic = false })
+-- config.font = wezterm.font ('IosevkaTerm NFM', { weight = 'Medium', italic = false })
+-- config.font = wezterm.font ('CaskaydiaCove NFM', { weight = 'Medium', italic = false })
+
 config.font_size = 15
 if get_os() == 'windows' then
     config.font_size = 13.5
@@ -68,6 +73,16 @@ config.keys = {
     },
 
     {
+        key = 'k',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivatePaneDirection('Up')
+    },
+    {
+        key = 'j',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivatePaneDirection('Down')
+    },
+    {
         key = '[',
         mods = 'CTRL',
         action = wezterm.action.ActivateCopyMode
@@ -76,6 +91,7 @@ config.keys = {
 
 if get_os() == 'windows' then
     config.default_prog = {'C:\\Windows\\system32\\wsl.exe', '~'}
+    --config.default_prog = { 'pwsh.exe' }
 end
 
 return config
